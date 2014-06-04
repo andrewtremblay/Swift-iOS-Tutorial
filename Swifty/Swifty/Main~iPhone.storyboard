@@ -7,7 +7,7 @@
         <!--Detail View Controller - Detail-->
         <scene sceneID="4n0-H2-FSX">
             <objects>
-                <viewController title="Detail" id="jb0-Nv-LHN" customClass="DetailViewController" customModule="Swifty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="Detail" id="jb0-Nv-LHN" customClass="DetailViewController" customModule="Swifty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ayU-nz-dNq"/>
                         <viewControllerLayoutGuide type="bottom" id="tzK-7v-j4R"/>
@@ -68,7 +68,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2YA-GB-LMU">
             <objects>
-                <navigationController id="KGk-BV-QS9" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="KGk-BV-QS9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fFN-Qy-KE9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

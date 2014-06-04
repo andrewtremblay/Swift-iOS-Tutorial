@@ -7,15 +7,17 @@
 //
 
 import UIKit
+//please note/appreciate the complete lack of required imports
 
-//we can put class funcs in before our pre-class variables
 
+//the list data is static so I'll just put it here
 enum exampleObjects {
+    //tuples!
     static var all = [
-        ("First Example", "Where we set the stage"),
-        ("Second Example", "😂"),
-        ("Third Example", "Try out some simple Web Requests")];
-}
+        (title: "First Example",  description: "Where we set the stage"),
+        (title: "Second Example", description: " 😦 😮 😀 "),
+        (title: "Third Example",  description: "Web Requests")];
+    }
 
 class MasterListViewController: UITableViewController {
     var dateObjects = NSMutableArray()
@@ -26,9 +28,7 @@ class MasterListViewController: UITableViewController {
             self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
-        
-
-    }    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,16 @@ class MasterListViewController: UITableViewController {
     
     //push in a new detail view controller via the navigation bar
     func presentDetailViewController(detailData:AnyObject) {
-        
+        let appDel :AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var newDetailVC : DetailViewController = appDel.newDetailViewController()
+        //we can conditionally present data form here
+        if let stringData = detailData as? String {
+            newDetailVC.detailString = stringData
+        }else {
+            newDetailVC.detailItem = detailData
+        }
+        navigationController!.pushViewController(newDetailVC, animated: true)
+        //
     }
 
     // #pragma mark - Segues
@@ -103,14 +112,10 @@ class MasterListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            if(inStaticExampleSection(indexPath.section)){
-                let stringRowData :String = exampleObjects.all[indexPath.row].0 as String
-                self.presentDetailViewController(stringRowData)
-            }else {
-                let rowData : AnyObject = dateObjects[indexPath.row] as AnyObject
-                self.presentDetailViewController(rowData)
-            }
+        if(inStaticExampleSection(indexPath.section)){
+            self.presentDetailViewController(exampleObjects.all[indexPath.row].title)
+        }else {
+            self.presentDetailViewController(dateObjects[indexPath.row])
         }
     }
     
@@ -147,10 +152,10 @@ class MasterListViewController: UITableViewController {
             cellObject = NSBundle.mainBundle().loadNibNamed("ExampleTableViewCell", owner: self, options: nil)[0];
         }
         
-        let cell:ExampleTableViewCell = cellObject as ExampleTableViewCell //note how we no longer need to import
-        let stringTitle = exampleObjects.all[indexPath.row].0 as String //NOT NSString
+        let cell:ExampleTableViewCell = cellObject as ExampleTableViewCell //note how we no longer need to import this, it's all in the same "module"
+        let stringTitle = exampleObjects.all[indexPath.row].title as String //NOT NSString
         cell.setTitle(stringTitle)
-        let stringDetail = exampleObjects.all[indexPath.row].1 as String //NOT NSString
+        let stringDetail = exampleObjects.all[indexPath.row].description as String //NOT NSString
         cell.detailLabel.text = stringDetail
 //        cell.titleLabel.textColor =  UIColor.brownColor() //change the color to show we can
         return cell

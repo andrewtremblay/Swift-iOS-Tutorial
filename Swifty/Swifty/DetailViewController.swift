@@ -13,7 +13,21 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     @IBOutlet var detailDescriptionLabel: UILabel
     var masterPopoverController: UIPopoverController? = nil
 
-    var detailString: NSString? {
+    //we can either set the detailitem and let the Vc take care of it, or we can adjust the string directly
+    
+    var detailItem: AnyObject? {
+        didSet {
+            // Update the view.
+            if let detail: AnyObject = self.detailItem {
+                self.detailString = detail.description
+            }
+            if self.masterPopoverController != nil {
+                self.masterPopoverController!.dismissPopoverAnimated(true)
+            }
+        }
+    }
+
+    var detailString: String? {
         didSet {
             // Update the view.
             self.configureViewForDetailString()
@@ -25,35 +39,22 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     
     func configureViewForDetailString() {
         // Update the user interface for the detail item.
-        if let detail: NSString = self.detailString {
+        if let detail: String = self.detailString {
             if let label = self.detailDescriptionLabel {
                 label.text = detail
             }
         }
     }
     
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureViewForDetailItem()
-            if self.masterPopoverController != nil {
-                self.masterPopoverController!.dismissPopoverAnimated(true)
-            }
-        }
-    }
-    func configureViewForDetailItem() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureViewForDetailItem()
+        if(!UIDevice.isIpad()) {
+
+        }
+
+        
+        self.configureViewForDetailString()
     }
 
     override func didReceiveMemoryWarning() {
