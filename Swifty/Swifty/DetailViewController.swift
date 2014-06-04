@@ -13,19 +13,35 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     @IBOutlet var detailDescriptionLabel: UILabel
     var masterPopoverController: UIPopoverController? = nil
 
-
-    var detailItem: AnyObject? {
+    var detailString: NSString? {
         didSet {
             // Update the view.
-            self.configureView()
-
+            self.configureViewForDetailString()
             if self.masterPopoverController != nil {
                 self.masterPopoverController!.dismissPopoverAnimated(true)
             }
         }
     }
-
-    func configureView() {
+    
+    func configureViewForDetailString() {
+        // Update the user interface for the detail item.
+        if let detail: NSString = self.detailString {
+            if let label = self.detailDescriptionLabel {
+                label.text = detail
+            }
+        }
+    }
+    
+    var detailItem: AnyObject? {
+        didSet {
+            // Update the view.
+            self.configureViewForDetailItem()
+            if self.masterPopoverController != nil {
+                self.masterPopoverController!.dismissPopoverAnimated(true)
+            }
+        }
+    }
+    func configureViewForDetailItem() {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
@@ -37,7 +53,7 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        self.configureViewForDetailItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,8 +61,8 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // #pragma mark - Split view
-
     func splitViewController(splitController: UISplitViewController, willHideViewController viewController: UIViewController, withBarButtonItem barButtonItem: UIBarButtonItem, forPopoverController popoverController: UIPopoverController) {
         barButtonItem.title = "Master" // NSLocalizedString(@"Master", @"Master")
         self.navigationItem.setLeftBarButtonItem(barButtonItem, animated: true)

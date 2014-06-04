@@ -10,15 +10,24 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
+    
+    class func isIpad() -> Bool {
+        return UIDevice.currentDevice().userInterfaceIdiom == .Pad
+    }
+    
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.endIndex-1] as UINavigationController
-        splitViewController.delegate = navigationController.topViewController as DetailViewController
+
+        //Since I'm targeting iOS 7 and later, we can't use UISplitViewController everywhere (it becomes universal in iOS 8)
+        if AppDelegate.isIpad() {
+            let splitViewController = self.window!.rootViewController as UISplitViewController
+            let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.endIndex-1] as UINavigationController
+            splitViewController.delegate = navigationController.topViewController as DetailViewController
+        }else{
+          //iPhones should have a navigation contrller as their root view
+          let navController = self.window!.rootViewController as UINavigationController
+          // Other than that we don't really need to do anything special here
+        }
         return true
     }
 
@@ -43,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

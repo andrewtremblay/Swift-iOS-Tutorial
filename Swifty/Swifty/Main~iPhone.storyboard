@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KGk-BV-QS9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="4n0-H2-FSX">
+            <objects>
+                <viewController title="Detail" id="jb0-Nv-LHN" customClass="DetailViewController" customModule="Swifty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ayU-nz-dNq"/>
+                        <viewControllerLayoutGuide type="bottom" id="tzK-7v-j4R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lpc-Dt-DdU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PgN-Gw-Qrk">
+                                <rect key="frame" x="0.0" y="275.5" width="320" height="17"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="oXX-Os-wMn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PgN-Gw-Qrk" secondAttribute="trailing" id="Seu-8O-om3"/>
+                            <constraint firstAttribute="centerY" secondItem="PgN-Gw-Qrk" secondAttribute="centerY" id="kGA-UK-Ktx"/>
+                            <constraint firstItem="PgN-Gw-Qrk" firstAttribute="leading" secondItem="lpc-Dt-DdU" secondAttribute="leading" id="tPT-tj-7ai"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="PgN-Gw-Qrk" id="rPn-Sm-bT2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dB1-0U-pdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="283"/>
+        </scene>
+        <!--Master List View Controller - Menu-->
+        <scene sceneID="D7S-UG-HiF">
+            <objects>
+                <tableViewController title="Menu" id="7Sa-T4-gsf" customClass="MasterListViewController" customModule="Swifty" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SeJ-IO-0hE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7Sa-T4-gsf" id="rBK-Yp-pz6"/>
+                            <outlet property="delegate" destination="7Sa-T4-gsf" id="Zok-Kw-5fx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Menu" id="Rel-qV-JyJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBV-tM-EO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2YA-GB-LMU">
+            <objects>
+                <navigationController id="KGk-BV-QS9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fFN-Qy-KE9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Sa-T4-gsf" kind="relationship" relationship="rootViewController" id="h1K-Vc-urM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L1d-gX-onF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11" y="283"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
