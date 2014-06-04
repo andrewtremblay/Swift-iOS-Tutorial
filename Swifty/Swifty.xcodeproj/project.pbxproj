@@ -10,17 +10,31 @@
 		31A26BA5193E755B00E47F81 /* MasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A26BA4193E755B00E47F81 /* MasterListViewController.swift */; };
 		31A26BA7193E76CF00E47F81 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */; };
 		31A26BAA193E776D00E47F81 /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */; };
-		31A26BAB193E7AA100E47F81 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE8F25193D35D500BA644C /* Main~iPad.storyboard */; };
-		31A26BAF193EAE2000E47F81 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */; };
+		31E4C22E193EE0F600F04FC8 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E4C22C193EE0F600F04FC8 /* Main~iPad.storyboard */; };
+		31E4C22F193EE0F600F04FC8 /* Main~iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E4C22D193EE0F600F04FC8 /* Main~iPhone.storyboard */; };
+		31E4C234193EE16F00F04FC8 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4C233193EE16F00F04FC8 /* ExampleTableViewCell.swift */; };
 		31FE8F20193D35D500BA644C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F1F193D35D500BA644C /* AppDelegate.swift */; };
 		31FE8F22193D35D500BA644C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F21193D35D500BA644C /* MasterViewController.swift */; };
 		31FE8F24193D35D500BA644C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F23193D35D500BA644C /* DetailViewController.swift */; };
 		31FE8F29193D35D500BA644C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FE8F28193D35D500BA644C /* Images.xcassets */; };
 		31FE8F35193D35D500BA644C /* SwiftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F34193D35D500BA644C /* SwiftyTests.swift */; };
-		31FE8F6C193E5F1D00BA644C /* Main~iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE8F6B193E5F1D00BA644C /* Main~iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		31E4C235193EE18500F04FC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31FE8F12193D35D500BA644C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FE8F19193D35D500BA644C;
+			remoteInfo = Swifty;
+		};
+		31E4C237193EE1A600F04FC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31FE8F12193D35D500BA644C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FE8F19193D35D500BA644C;
+			remoteInfo = Swifty;
+		};
 		31FE8F2F193D35D500BA644C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31FE8F12193D35D500BA644C /* Project object */;
@@ -34,18 +48,18 @@
 		31A26BA4193E755B00E47F81 /* MasterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterListViewController.swift; sourceTree = "<group>"; };
 		31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = Swifty/Views/DateTableViewCell.xib; sourceTree = "<group>"; };
 		31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExampleTableViewCell.xib; path = Swifty/Views/ExampleTableViewCell.xib; sourceTree = "<group>"; };
-		31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
+		31E4C22C193EE0F600F04FC8 /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
+		31E4C22D193EE0F600F04FC8 /* Main~iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPhone.storyboard"; sourceTree = "<group>"; };
+		31E4C233193EE16F00F04FC8 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleTableViewCell.swift; path = Swifty/ExampleTableViewCell.swift; sourceTree = "<group>"; };
 		31FE8F1A193D35D500BA644C /* Swifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FE8F1E193D35D500BA644C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FE8F1F193D35D500BA644C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31FE8F21193D35D500BA644C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		31FE8F23193D35D500BA644C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		31FE8F26193D35D500BA644C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main~iPad.storyboard"; sourceTree = "<group>"; };
 		31FE8F28193D35D500BA644C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		31FE8F2E193D35D500BA644C /* SwiftyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FE8F33193D35D500BA644C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FE8F34193D35D500BA644C /* SwiftyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTests.swift; sourceTree = "<group>"; };
-		31FE8F6B193E5F1D00BA644C /* Main~iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPhone.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +83,8 @@
 		31A26BA8193E771600E47F81 /* Other Views */ = {
 			isa = PBXGroup;
 			children = (
+				31E4C233193EE16F00F04FC8 /* ExampleTableViewCell.swift */,
 				31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */,
-				31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */,
 				31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */,
 			);
 			name = "Other Views";
@@ -102,8 +116,8 @@
 				31FE8F21193D35D500BA644C /* MasterViewController.swift */,
 				31A26BA4193E755B00E47F81 /* MasterListViewController.swift */,
 				31FE8F23193D35D500BA644C /* DetailViewController.swift */,
-				31FE8F6B193E5F1D00BA644C /* Main~iPhone.storyboard */,
-				31FE8F25193D35D500BA644C /* Main~iPad.storyboard */,
+				31E4C22C193EE0F600F04FC8 /* Main~iPad.storyboard */,
+				31E4C22D193EE0F600F04FC8 /* Main~iPhone.storyboard */,
 				31A26BA8193E771600E47F81 /* Other Views */,
 				31FE8F28193D35D500BA644C /* Images.xcassets */,
 				31FE8F1D193D35D500BA644C /* Supporting Files */,
@@ -168,6 +182,8 @@
 			);
 			dependencies = (
 				31FE8F30193D35D500BA644C /* PBXTargetDependency */,
+				31E4C236193EE18500F04FC8 /* PBXTargetDependency */,
+				31E4C238193EE1A600F04FC8 /* PBXTargetDependency */,
 			);
 			name = SwiftyTests;
 			productName = SwiftyTests;
@@ -216,8 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FE8F6C193E5F1D00BA644C /* Main~iPhone.storyboard in Resources */,
-				31A26BAB193E7AA100E47F81 /* Main~iPad.storyboard in Resources */,
+				31E4C22E193EE0F600F04FC8 /* Main~iPad.storyboard in Resources */,
+				31E4C22F193EE0F600F04FC8 /* Main~iPhone.storyboard in Resources */,
 				31A26BA7193E76CF00E47F81 /* DateTableViewCell.xib in Resources */,
 				31A26BAA193E776D00E47F81 /* ExampleTableViewCell.xib in Resources */,
 				31FE8F29193D35D500BA644C /* Images.xcassets in Resources */,
@@ -238,8 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E4C234193EE16F00F04FC8 /* ExampleTableViewCell.swift in Sources */,
 				31A26BA5193E755B00E47F81 /* MasterListViewController.swift in Sources */,
-				31A26BAF193EAE2000E47F81 /* ExampleTableViewCell.swift in Sources */,
 				31FE8F24193D35D500BA644C /* DetailViewController.swift in Sources */,
 				31FE8F22193D35D500BA644C /* MasterViewController.swift in Sources */,
 				31FE8F20193D35D500BA644C /* AppDelegate.swift in Sources */,
@@ -257,23 +273,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		31E4C236193EE18500F04FC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31FE8F19193D35D500BA644C /* Swifty */;
+			targetProxy = 31E4C235193EE18500F04FC8 /* PBXContainerItemProxy */;
+		};
+		31E4C238193EE1A600F04FC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31FE8F19193D35D500BA644C /* Swifty */;
+			targetProxy = 31E4C237193EE1A600F04FC8 /* PBXContainerItemProxy */;
+		};
 		31FE8F30193D35D500BA644C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 31FE8F19193D35D500BA644C /* Swifty */;
 			targetProxy = 31FE8F2F193D35D500BA644C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		31FE8F25193D35D500BA644C /* Main~iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31FE8F26193D35D500BA644C /* Base */,
-			);
-			name = "Main~iPad.storyboard";
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		31FE8F36193D35D500BA644C /* Debug */ = {
@@ -310,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -347,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

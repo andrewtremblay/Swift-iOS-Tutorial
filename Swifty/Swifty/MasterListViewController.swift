@@ -10,12 +10,14 @@ import UIKit
 
 //we can put class funcs in before our pre-class variables
 
-
-class MasterListViewController: UITableViewController {
-    var staticExampleObjects = [
+enum exampleObjects {
+    static var all = [
         ("First Example", "Where we set the stage"),
         ("Second Example", "😂"),
-        ("Third Example", "Try out some simple Web Requests")]
+        ("Third Example", "Try out some simple Web Requests")];
+}
+
+class MasterListViewController: UITableViewController {
     var dateObjects = NSMutableArray()
     
     override func awakeFromNib() {
@@ -26,14 +28,25 @@ class MasterListViewController: UITableViewController {
         }
         
 
-    }
+    }    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewDateObject:")
+        self.navigationItem.rightBarButtonItem = addButton
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //push in a new detail view controller via the navigation bar
+    func presentDetailViewController(detailData:AnyObject) {
+        
     }
 
     // #pragma mark - Segues
@@ -59,7 +72,7 @@ class MasterListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //make sure you use the relevant array sizes
-        return inStaticExampleSection(section) ? staticExampleObjects.count : dateObjects.count
+        return inStaticExampleSection(section) ? exampleObjects.all.count : dateObjects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -92,7 +105,7 @@ class MasterListViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             if(inStaticExampleSection(indexPath.section)){
-                let stringRowData :String = staticExampleObjects[indexPath.row].0 as String
+                let stringRowData :String = exampleObjects.all[indexPath.row].0 as String
                 self.presentDetailViewController(stringRowData)
             }else {
                 let rowData : AnyObject = dateObjects[indexPath.row] as AnyObject
@@ -101,10 +114,6 @@ class MasterListViewController: UITableViewController {
         }
     }
     
-    //push in a new detail view controller via the navigation bar
-    func presentDetailViewController(detailData:AnyObject) {
-        
-    }
     
     // #pragma mark - Date Row Logic
     
@@ -132,17 +141,18 @@ class MasterListViewController: UITableViewController {
     // #pragma mark - Static Example Row Logic
     
     func staticExampleCell(indexPath:NSIndexPath) -> UITableViewCell{
-        //reuse a view if we can
+        //First: reuse a view if we can
         var cellObject : AnyObject! = tableView.dequeueReusableCellWithIdentifier("ExampleTableViewCell")
-        if(cellObject == nil){
-            //we have to load the object from a xib if we don't have it yet
+        if(cellObject == nil){ //we have to load the object from a xib if we don't have it yet
             cellObject = NSBundle.mainBundle().loadNibNamed("ExampleTableViewCell", owner: self, options: nil)[0];
         }
         
-        let cell = cellObject as ExampleTableViewCell //note how we no longer need to import
-        let object = staticExampleObjects[indexPath.row].0 as NSString
-        cell.titleLabel.text = object.description
-        cell.textColor =  UIColor.brownColor() //change the color to show we can
+        let cell:ExampleTableViewCell = cellObject as ExampleTableViewCell //note how we no longer need to import
+        let stringTitle = exampleObjects.all[indexPath.row].0 as String //NOT NSString
+        cell.setTitle(stringTitle)
+        let stringDetail = exampleObjects.all[indexPath.row].1 as String //NOT NSString
+        cell.detailLabel.text = stringDetail
+//        cell.titleLabel.textColor =  UIColor.brownColor() //change the color to show we can
         return cell
     }
     
@@ -157,9 +167,8 @@ class MasterListViewController: UITableViewController {
 
     func heightOfExampleCell() -> CGFloat
     {
-        return 44 //default height for an example table row
+        return 60 //default height for an example table row
     }
-
     
     func inStaticExampleSection(section: Int) -> Bool {
         return section == 0

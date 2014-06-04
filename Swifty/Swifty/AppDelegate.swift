@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-
+        //device suffixes ~iPad and ~iPhone don't work right now
+        
         //Since I'm targeting iOS 7 and later, we can't use UISplitViewController everywhere (it becomes universal in iOS 8)
         if UIDevice.isIpad() {
             let splitViewController = self.window!.rootViewController as UISplitViewController

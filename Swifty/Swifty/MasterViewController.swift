@@ -19,11 +19,7 @@ class MasterViewController: MasterListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
-        let addDateButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewDateObject:")
-        self.navigationItem.rightBarButtonItem = addDateButton
+
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.endIndex-1].topViewController as? DetailViewController
@@ -36,7 +32,7 @@ class MasterViewController: MasterListViewController {
     }
 
     override func presentDetailViewController(detailItem:AnyObject) {
-        //don't also call the super view
+        //don't also call the super view (we're overriding)
         if let objectDate = detailItem as? NSDate {
             self.detailViewController!.detailItem = objectDate
         }
