@@ -43,6 +43,10 @@ class MasterListViewController: UITableViewController {
         return 2
     }
     
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return inStaticExampleSection(indexPath.section) ? heightOfExampleCell : heightOfDateCell //magic numbers! don't actually do this
+    }
+    
     //
     override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
         //make sure you use the right titles
@@ -84,10 +88,10 @@ class MasterListViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             if(inStaticExampleSection(indexPath.section)){
-                let object = staticExampleObjects[indexPath.row]
+                let object :String = staticExampleObjects[indexPath.row]
                 self.presentDetailViewController(object)
             }else {
-                let object = dateObjects[indexPath.row]
+                let object : AnyObject = dateObjects[indexPath.row] as AnyObject
                 self.presentDetailViewController(object)
             }
         }
