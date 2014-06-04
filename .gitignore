@@ -21,3 +21,5 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+*.xcuserstate
+*.xcuserdata
