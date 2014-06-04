@@ -22,19 +22,30 @@ extension UIDevice {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var storyboard: UIStoryboard?
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        //device suffixes ~iPad and ~iPhone don't work right now
+        //device suffixes ~iPad and ~iPhone don't work right now, in fact, a lot of .storyboard stuff is borked
+        //Since I'm targeting iOS 7 and later, we can't use UISplitViewController everywhere (it only becomes universal in iOS 8)
+        self.window = UIWindow() //window doesn't have an init with frame class, so we need to set that to the screen bounds in order to have touch
+        self.window!.frame = UIScreen.mainScreen().bounds
         
-        //Since I'm targeting iOS 7 and later, we can't use UISplitViewController everywhere (it becomes universal in iOS 8)
         if UIDevice.isIpad() {
-            let splitViewController = self.window!.rootViewController as UISplitViewController
+            self.storyboard = UIStoryboard(name: "Main~iPad", bundle: nil)
+            self.window!.rootViewController = self.storyboard!.instantiateInitialViewController() as UISplitViewController
+            let splitViewController = self.window!.rootViewController as UISplitViewController //odd how we need to keep casting
             let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.endIndex-1] as UINavigationController
             splitViewController.delegate = navigationController.topViewController as DetailViewController
         }else{
-          //iPhones should have a navigation contrller as their root view
-          let navController = self.window!.rootViewController as UINavigationController
-          // Other than that we don't really need to do anything special here
+            self.storyboard = UIStoryboard(name: "Main~iPhone", bundle: nil)
+            self.window!.rootViewController = self.storyboard!.instantiateInitialViewController() as UINavigationController
+            //iPhones should just have a navigation controller as their root view
+            // Other than that we don't really need to do anything special here
         }
+        
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
