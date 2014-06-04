@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
@@ -23,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-h5-Ok0">
-                        <rect key="frame" x="15" y="0.0" width="194" height="34"/>
+                        <rect key="frame" x="15" y="0.0" width="194" height="33.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="33" id="Ts0-fB-Vl1"/>
                         </constraints>
@@ -31,8 +32,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-ji-yI3">
-                        <rect key="frame" x="25" y="33.5" width="187" height="27.5"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-ji-yI3">
+                        <rect key="frame" x="25" y="28.5" width="187" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -40,14 +41,13 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="20z-UU-P1B" secondAttribute="bottom" id="8xM-1k-hUS"/>
-                    <constraint firstItem="BXX-ji-yI3" firstAttribute="top" secondItem="ChG-h5-Ok0" secondAttribute="bottom" id="BWf-ll-RxY"/>
+                    <constraint firstItem="BXX-ji-yI3" firstAttribute="top" secondItem="ChG-h5-Ok0" secondAttribute="bottom" constant="-5" id="BWf-ll-RxY"/>
                     <constraint firstAttribute="trailing" secondItem="20z-UU-P1B" secondAttribute="trailing" constant="11" id="Dgj-mz-BL6"/>
                     <constraint firstItem="20z-UU-P1B" firstAttribute="leading" secondItem="ChG-h5-Ok0" secondAttribute="trailing" constant="8" id="G3T-S6-rGD"/>
                     <constraint firstItem="ChG-h5-Ok0" firstAttribute="leading" secondItem="bek-KI-a9x" secondAttribute="leading" constant="15" id="KSH-jQ-7PF"/>
                     <constraint firstItem="20z-UU-P1B" firstAttribute="leading" secondItem="BXX-ji-yI3" secondAttribute="trailing" constant="5" id="OMR-q9-glZ"/>
                     <constraint firstItem="ChG-h5-Ok0" firstAttribute="top" secondItem="bek-KI-a9x" secondAttribute="top" id="Q2N-Ii-GZe"/>
                     <constraint firstItem="BXX-ji-yI3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bek-KI-a9x" secondAttribute="leading" constant="25" id="Vn8-Td-wa6"/>
-                    <constraint firstItem="BXX-ji-yI3" firstAttribute="top" secondItem="ChG-h5-Ok0" secondAttribute="bottom" id="o0g-EX-vkJ"/>
                     <constraint firstAttribute="bottom" secondItem="BXX-ji-yI3" secondAttribute="bottom" id="pZO-jc-rf7"/>
                     <constraint firstItem="BXX-ji-yI3" firstAttribute="leading" secondItem="bek-KI-a9x" secondAttribute="leading" constant="25" id="rgr-VD-OsY"/>
                     <constraint firstItem="20z-UU-P1B" firstAttribute="top" secondItem="bek-KI-a9x" secondAttribute="top" id="ywG-9P-sdi"/>

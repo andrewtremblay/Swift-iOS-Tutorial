@@ -48,12 +48,7 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        if(!UIDevice.isIpad()) {
-
-        }
-
-        
+        // Do any additional setup after loading the view, typically from a nib.        
         self.configureViewForDetailString()
     }
 
