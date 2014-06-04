@@ -6,10 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExampleTableViewCell" rowHeight="60" id="3lp-BH-K3q">
+        <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExampleTableViewCell" rowHeight="60" id="3lp-BH-K3q" customClass="ExampleTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3lp-BH-K3q" id="bek-KI-a9x">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Example)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20z-UU-P1B">
@@ -21,14 +22,38 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-h5-Ok0">
+                        <rect key="frame" x="15" y="0.0" width="194" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="Ts0-fB-Vl1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-ji-yI3">
+                        <rect key="frame" x="25" y="33.5" width="187" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="20z-UU-P1B" secondAttribute="bottom" id="8xM-1k-hUS"/>
+                    <constraint firstItem="BXX-ji-yI3" firstAttribute="top" secondItem="ChG-h5-Ok0" secondAttribute="bottom" id="BWf-ll-RxY"/>
                     <constraint firstAttribute="trailing" secondItem="20z-UU-P1B" secondAttribute="trailing" constant="11" id="Dgj-mz-BL6"/>
+                    <constraint firstItem="20z-UU-P1B" firstAttribute="leading" secondItem="ChG-h5-Ok0" secondAttribute="trailing" constant="8" id="G3T-S6-rGD"/>
+                    <constraint firstItem="ChG-h5-Ok0" firstAttribute="leading" secondItem="bek-KI-a9x" secondAttribute="leading" constant="15" id="KSH-jQ-7PF"/>
+                    <constraint firstItem="20z-UU-P1B" firstAttribute="leading" secondItem="BXX-ji-yI3" secondAttribute="trailing" constant="5" id="OMR-q9-glZ"/>
+                    <constraint firstItem="ChG-h5-Ok0" firstAttribute="top" secondItem="bek-KI-a9x" secondAttribute="top" id="Q2N-Ii-GZe"/>
+                    <constraint firstItem="BXX-ji-yI3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bek-KI-a9x" secondAttribute="leading" constant="25" id="Vn8-Td-wa6"/>
+                    <constraint firstItem="BXX-ji-yI3" firstAttribute="top" secondItem="ChG-h5-Ok0" secondAttribute="bottom" id="o0g-EX-vkJ"/>
+                    <constraint firstAttribute="bottom" secondItem="BXX-ji-yI3" secondAttribute="bottom" id="pZO-jc-rf7"/>
+                    <constraint firstItem="BXX-ji-yI3" firstAttribute="leading" secondItem="bek-KI-a9x" secondAttribute="leading" constant="25" id="rgr-VD-OsY"/>
                     <constraint firstItem="20z-UU-P1B" firstAttribute="top" secondItem="bek-KI-a9x" secondAttribute="top" id="ywG-9P-sdi"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="227" y="173"/>
+            <point key="canvasLocation" x="139" y="189"/>
         </tableViewCell>
     </objects>
 </document>

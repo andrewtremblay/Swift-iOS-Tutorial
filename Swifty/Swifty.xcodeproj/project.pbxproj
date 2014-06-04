@@ -11,6 +11,7 @@
 		31A26BA7193E76CF00E47F81 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */; };
 		31A26BAA193E776D00E47F81 /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */; };
 		31A26BAB193E7AA100E47F81 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FE8F25193D35D500BA644C /* Main~iPad.storyboard */; };
+		31A26BAF193EAE2000E47F81 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */; };
 		31FE8F20193D35D500BA644C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F1F193D35D500BA644C /* AppDelegate.swift */; };
 		31FE8F22193D35D500BA644C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F21193D35D500BA644C /* MasterViewController.swift */; };
 		31FE8F24193D35D500BA644C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FE8F23193D35D500BA644C /* DetailViewController.swift */; };
@@ -33,6 +34,7 @@
 		31A26BA4193E755B00E47F81 /* MasterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterListViewController.swift; sourceTree = "<group>"; };
 		31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = Swifty/Views/DateTableViewCell.xib; sourceTree = "<group>"; };
 		31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExampleTableViewCell.xib; path = Swifty/Views/ExampleTableViewCell.xib; sourceTree = "<group>"; };
+		31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
 		31FE8F1A193D35D500BA644C /* Swifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FE8F1E193D35D500BA644C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FE8F1F193D35D500BA644C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */,
+				31A26BAE193EAE2000E47F81 /* ExampleTableViewCell.swift */,
 				31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */,
 			);
 			name = "Other Views";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A26BA5193E755B00E47F81 /* MasterListViewController.swift in Sources */,
+				31A26BAF193EAE2000E47F81 /* ExampleTableViewCell.swift in Sources */,
 				31FE8F24193D35D500BA644C /* DetailViewController.swift in Sources */,
 				31FE8F22193D35D500BA644C /* MasterViewController.swift in Sources */,
 				31FE8F20193D35D500BA644C /* AppDelegate.swift in Sources */,

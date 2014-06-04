@@ -12,12 +12,15 @@ import UIKit
 
 
 class MasterListViewController: UITableViewController {
-    var staticExampleObjects = ["First Example", "Second Example", "Third Example"]
+    var staticExampleObjects = [
+        ("First Example", "Where we set the stage"),
+        ("Second Example", "😂"),
+        ("Third Example", "Try out some simple Web Requests")]
     var dateObjects = NSMutableArray()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        if AppDelegate.isIpad() {
+        if UIDevice.isIpad() {
             self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
@@ -42,9 +45,10 @@ class MasterListViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
-    
+
+    //make sure we use the right heights
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return inStaticExampleSection(indexPath.section) ? heightOfExampleCell : heightOfDateCell //magic numbers! don't actually do this
+        return inStaticExampleSection(indexPath.section) ? heightOfExampleCell() : heightOfDateCell()
     }
     
     //
@@ -74,7 +78,7 @@ class MasterListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if(inStaticExampleSection(indexPath.section)){
-            //THIS WILL NEVER BE DISPLAYED SINCE WE MADE THIS SECTION UNEDITABLE IN tableView:canEditRowAtIndexPath:
+            //THIS WILL NEVER BE CALLED SINCE WE MADE THIS SECTION UNEDITABLE IN tableView:canEditRowAtIndexPath:
         }else {
             if editingStyle == .Delete {
                 dateObjects.removeObjectAtIndex(indexPath.row)
@@ -88,32 +92,18 @@ class MasterListViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             if(inStaticExampleSection(indexPath.section)){
-                let object :String = staticExampleObjects[indexPath.row]
-                self.presentDetailViewController(object)
+                let stringRowData :String = staticExampleObjects[indexPath.row].0 as String
+                self.presentDetailViewController(stringRowData)
             }else {
-                let object : AnyObject = dateObjects[indexPath.row] as AnyObject
-                self.presentDetailViewController(object)
+                let rowData : AnyObject = dateObjects[indexPath.row] as AnyObject
+                self.presentDetailViewController(rowData)
             }
         }
     }
     
-    func presentDetailViewController(detailItem:AnyObject) {
-        //default pushes new view controller
-    }
-    
-    // #pragma mark - Static Example Row Logic
-    
-    func staticExampleCell(indexPath:NSIndexPath) -> UITableViewCell{
-        var cellObject : AnyObject! = tableView.dequeueReusableCellWithIdentifier("ExampleTableViewCell")
-        if(cellObject == nil){
-           cellObject = NSBundle.mainBundle().loadNibNamed("ExampleTableViewCell", owner: self, options: nil)[0];
-        }
+    //push in a new detail view controller via the navigation bar
+    func presentDetailViewController(detailData:AnyObject) {
         
-        let cell = cellObject as UITableViewCell
-        let object = staticExampleObjects[indexPath.row] as NSString
-        cell.textLabel.text = object.description
-        cell.textColor =  UIColor.brownColor() //change the color to show we can
-        return cell
     }
     
     // #pragma mark - Date Row Logic
@@ -139,10 +129,38 @@ class MasterListViewController: UITableViewController {
         return cell
     }
     
+    // #pragma mark - Static Example Row Logic
     
+    func staticExampleCell(indexPath:NSIndexPath) -> UITableViewCell{
+        //reuse a view if we can
+        var cellObject : AnyObject! = tableView.dequeueReusableCellWithIdentifier("ExampleTableViewCell")
+        if(cellObject == nil){
+            //we have to load the object from a xib if we don't have it yet
+            cellObject = NSBundle.mainBundle().loadNibNamed("ExampleTableViewCell", owner: self, options: nil)[0];
+        }
+        
+        let cell = cellObject as ExampleTableViewCell //note how we no longer need to import
+        let object = staticExampleObjects[indexPath.row].0 as NSString
+        cell.titleLabel.text = object.description
+        cell.textColor =  UIColor.brownColor() //change the color to show we can
+        return cell
+    }
+    
+
     // #pragma mark - Helper Functions
     
     //we needn't do this, but I prefer readability in my examples
+    func heightOfDateCell() -> CGFloat
+    {
+        return 44 //default height for a date table row
+    }
+
+    func heightOfExampleCell() -> CGFloat
+    {
+        return 44 //default height for an example table row
+    }
+
+    
     func inStaticExampleSection(section: Int) -> Bool {
         return section == 0
     }

@@ -35,13 +35,14 @@
                             <constraint firstItem="PgN-Gw-Qrk" firstAttribute="leading" secondItem="lpc-Dt-DdU" secondAttribute="leading" id="tPT-tj-7ai"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="5AO-j6-DfT"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="PgN-Gw-Qrk" id="rPn-Sm-bT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dB1-0U-pdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="913"/>
+            <point key="canvasLocation" x="880" y="283"/>
         </scene>
         <!--Master List View Controller - Menu-->
         <scene sceneID="D7S-UG-HiF">
@@ -51,21 +52,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="9dG-lw-p5R">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9dG-lw-p5R" id="G7a-21-gaq">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="7Sa-T4-gsf" id="rBK-Yp-pz6"/>
                             <outlet property="delegate" destination="7Sa-T4-gsf" id="Zok-Kw-5fx"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Menu" id="Rel-qV-JyJ"/>
+                    <connections>
+                        <segue destination="jb0-Nv-LHN" kind="push" id="aIX-Qy-vp2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBV-tM-EO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
