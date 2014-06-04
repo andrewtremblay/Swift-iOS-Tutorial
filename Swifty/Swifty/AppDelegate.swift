@@ -8,18 +8,24 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+//ALL MY EXTENSIONS ARE LISTED INSIDE APPDELEGATE
+//most of them are just readability helpers
+extension UIDevice {
     class func isIpad() -> Bool {
         return UIDevice.currentDevice().userInterfaceIdiom == .Pad
     }
+}
+
+
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
 
         //Since I'm targeting iOS 7 and later, we can't use UISplitViewController everywhere (it becomes universal in iOS 8)
-        if AppDelegate.isIpad() {
+        if UIDevice.isIpad() {
             let splitViewController = self.window!.rootViewController as UISplitViewController
             let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.endIndex-1] as UINavigationController
             splitViewController.delegate = navigationController.topViewController as DetailViewController

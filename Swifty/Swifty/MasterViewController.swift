@@ -9,8 +9,7 @@
 
 import UIKit
 
-//we can put class funcs in before our pre-class variables
-
+//This is the ViewController that iPads will use regardless of iOS. See their storyboard for more info.
 class MasterViewController: MasterListViewController {
     var detailViewController: DetailViewController? = nil
 
@@ -35,14 +34,6 @@ class MasterViewController: MasterListViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // #pragma mark - Segues
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            let indexPath = self.tableView.indexPathForSelectedRow()
-            let object = dateObjects[indexPath.row] as NSDate
-            ((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = object
-        }
-    }
 
     override func presentDetailViewController(detailItem:AnyObject) {
         //don't also call the super view
@@ -54,6 +45,16 @@ class MasterViewController: MasterListViewController {
             self.detailViewController!.detailString = objectString
         }
     }
+
+    // #pragma mark - Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let object = dateObjects[indexPath.row] as NSDate
+            ((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = object
+        }
+    }
+    
 
     
 }
