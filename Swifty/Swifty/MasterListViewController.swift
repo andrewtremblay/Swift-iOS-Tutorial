@@ -57,6 +57,25 @@ class MasterListViewController: UITableViewController {
         navigationController!.pushViewController(newDetailVC, animated: true)
         //
     }
+    
+    func presentEmojiViewController() {
+        let appDel :AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var newEmojiVC : EmojiViewController = appDel.newEmojiViewController()
+        navigationController!.pushViewController(newEmojiVC, animated: true)
+    }
+
+    func presentBaseExampleViewController(){
+        let appDel :AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var newEmojiVC : EmojiViewController = appDel.newEmojiViewController()
+        navigationController!.pushViewController(newEmojiVC, animated: true)
+    }
+    
+    func presentWebcallViewController(){
+        let appDel :AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var newEmojiVC : EmojiViewController = appDel.newEmojiViewController()
+        navigationController!.pushViewController(newEmojiVC, animated: true)
+    }
+    
 
     // #pragma mark - Segues
     // #pragma mark - Table View
@@ -93,6 +112,21 @@ class MasterListViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(inStaticExampleSection(indexPath.section)){
+            if(exampleObjects.all[indexPath.row].title == "First Example"){
+                self.presentBaseExampleViewController()
+            }else if(exampleObjects.all[indexPath.row].title == "Second Example") {
+                self.presentEmojiViewController()
+            }else if(exampleObjects.all[indexPath.row].title == "Third Example") {
+                self.presentWebcallViewController()
+            }
+        }else {
+            self.presentDetailViewController(dateObjects[indexPath.row])
+        }
+    }
+    
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return !inStaticExampleSection(indexPath.section) // we do not want the example section to be editable, but eiditing in all other sections is fine
@@ -110,15 +144,6 @@ class MasterListViewController: UITableViewController {
             }
         }
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(inStaticExampleSection(indexPath.section)){
-            self.presentDetailViewController(exampleObjects.all[indexPath.row].title)
-        }else {
-            self.presentDetailViewController(dateObjects[indexPath.row])
-        }
-    }
-    
     
     // #pragma mark - Date Row Logic
     

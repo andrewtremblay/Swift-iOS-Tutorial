@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3197BE98193FDC600013A4B8 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197BE97193FDC600013A4B8 /* EmojiViewController.swift */; };
+		3197BE9B193FE8C30013A4B8 /* EmojiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3197BE9A193FE8C30013A4B8 /* EmojiViewController.xib */; };
 		31A26BA5193E755B00E47F81 /* MasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A26BA4193E755B00E47F81 /* MasterListViewController.swift */; };
 		31A26BA7193E76CF00E47F81 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */; };
 		31A26BAA193E776D00E47F81 /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3197BE97193FDC600013A4B8 /* EmojiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		3197BE9A193FE8C30013A4B8 /* EmojiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiViewController.xib; sourceTree = "<group>"; };
 		31A26BA4193E755B00E47F81 /* MasterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterListViewController.swift; sourceTree = "<group>"; };
 		31A26BA6193E76CF00E47F81 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = Swifty/Views/DateTableViewCell.xib; sourceTree = "<group>"; };
 		31A26BA9193E776D00E47F81 /* ExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExampleTableViewCell.xib; path = Swifty/Views/ExampleTableViewCell.xib; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3197BE99193FE84A0013A4B8 /* Example ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3197BE97193FDC600013A4B8 /* EmojiViewController.swift */,
+				3197BE9A193FE8C30013A4B8 /* EmojiViewController.xib */,
+			);
+			name = "Example ViewControllers";
+			sourceTree = "<group>";
+		};
 		31A26BA8193E771600E47F81 /* Other Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +134,7 @@
 				31A26BA8193E771600E47F81 /* Other Views */,
 				31FE8F28193D35D500BA644C /* Images.xcassets */,
 				31FE8F1D193D35D500BA644C /* Supporting Files */,
+				3197BE99193FE84A0013A4B8 /* Example ViewControllers */,
 			);
 			path = Swifty;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 				31A26BA7193E76CF00E47F81 /* DateTableViewCell.xib in Resources */,
 				31A26BAA193E776D00E47F81 /* ExampleTableViewCell.xib in Resources */,
 				31FE8F29193D35D500BA644C /* Images.xcassets in Resources */,
+				3197BE9B193FE8C30013A4B8 /* EmojiViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +271,7 @@
 			files = (
 				31E4C234193EE16F00F04FC8 /* ExampleTableViewCell.swift in Sources */,
 				31A26BA5193E755B00E47F81 /* MasterListViewController.swift in Sources */,
+				3197BE98193FDC600013A4B8 /* EmojiViewController.swift in Sources */,
 				31FE8F24193D35D500BA644C /* DetailViewController.swift in Sources */,
 				31FE8F22193D35D500BA644C /* MasterViewController.swift in Sources */,
 				31FE8F20193D35D500BA644C /* AppDelegate.swift in Sources */,

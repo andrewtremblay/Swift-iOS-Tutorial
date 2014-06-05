@@ -53,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //make sure you set the Storyboard ID of the view controller if you want to repeat this behavior
         return self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
     }
+    
+    func newEmojiViewController() -> EmojiViewController {
+        return  EmojiViewController()
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
